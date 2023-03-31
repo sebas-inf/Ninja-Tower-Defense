@@ -1,0 +1,25 @@
+classes:
+  Main
+  Friend(float fire_rate, float damage, int damage_radius, projectiles[], int hit_type, string image_path, int tier, ...)
+  Enemy(float speed, float health, float damage, string image_path, int tier, int reward, ...)
+  Node(int x, int y, int dx, int dy) # for enemy pathfinding
+  Projectile(int x, int y, int dx, int dy) # gets the damage and speed from parent Friend(), this is for single target projectiles
+  Splash_Projectile(int x, int y, int dx, int dy) # gets damage, speed, radius from parent Friend(), this is for Area of Effect projectiles
+  # note that we could either combine Projectile() and Splash_Projectile() into one class or keep them separate
+  
+  
+functions:
+  build_mode(...)
+  select_mode(...)
+  draw_map(int map)
+  set_volume(int volume) # has to loop through all sounds to change them individually (we will need sounds[])
+  pause(...) # has options screen
+  titlescreen(...) # start, options, quit, load save buttons
+  game_over(int score, ...)
+  game_won(int score, ...)
+  save(...) # save map, towers, round, health, money, ... to a text file (can only save between rounds)
+  quit(...)
+  load(...)
+  play(int map, int difficulty)
+  map_select(...) # screen with map options to load into new game
+  
