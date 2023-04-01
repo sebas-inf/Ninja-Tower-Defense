@@ -47,16 +47,6 @@ def new_game():
     text_rect = text.get_rect(center = (button_width // 2, button_height // 2))
     button_surface.blit(text, text_rect)
 
-#Continues from the current game and runs till user out of health
-def unlimited():
-    button_width = 200
-    button_height = 100
-    button_surface = pygame.Surface((button_width, button_height))
-    button_surface.fill((65,135,145))
-    text = font.render("Continue", True, (255,255,255))
-    text_rect = text.get_rect(center = (button_width // 2, button_height // 2))
-    button_surface.blit(text, text_rect)
-
 #Loads previous saved game
 def load():
     button_width = 200
