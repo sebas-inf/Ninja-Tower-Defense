@@ -16,6 +16,78 @@ def play(mapID, difficulty = 1):
 
 def map_select():
     pass
+
+#Displays losing message
+def lost():
+    button_width = 200
+    button_height = 100
+    button_surface = pygame.Surface((button_width, button_height))
+    button_surface.fill((122,45,48))
+    text = font.render("You Lost", True, (255,255,255))
+    text_rect = text.get_rect(center = (button_width // 2, button_height // 2))
+    button_surface.blit(text, text_rect)
+
+#Displays winning message
+def won():
+    button_width = 200
+    button_height = 100
+    button_surface = pygame.Surface((button_width, button_height))
+    button_surface.fill((65,135,145))
+    text = font.render("You Won", True, (255,255,255))
+    text_rect = text.get_rect(center = (button_width // 2, button_height // 2))
+    button_surface.blit(text, text_rect)
+
+#Starts a new game
+def new_game():
+    button_width = 200
+    button_height = 100
+    button_surface = pygame.Surface((button_width, button_height))
+    button_surface.fill((65,135,145))
+    text = font.render("Start a New Game?", True, (255,255,255))
+    text_rect = text.get_rect(center = (button_width // 2, button_height // 2))
+    button_surface.blit(text, text_rect)
+
+#Continues from the current game and runs till user out of health
+def unlimited():
+    button_width = 200
+    button_height = 100
+    button_surface = pygame.Surface((button_width, button_height))
+    button_surface.fill((65,135,145))
+    text = font.render("Continue", True, (255,255,255))
+    text_rect = text.get_rect(center = (button_width // 2, button_height // 2))
+    button_surface.blit(text, text_rect)
+
+#Loads previous saved game
+def load():
+    button_width = 200
+    button_height = 100
+    button_surface = pygame.Surface((button_width, button_height))
+    button_surface.fill((65,135,145))
+    text = font.render("Load Game", True, (255,255,255))
+    text_rect = text.get_rect(center = (button_width // 2, button_height // 2))
+    button_surface.blit(text, text_rect)
+
+#Ends the game and closes the window
+def quit():
+    button_width = 200
+    button_height = 100
+    button_surface = pygame.Surface((button_width, button_height))
+    button_surface.fill((65,135,145))
+    text = font.render("Quit", True, (255,255,255))
+    text_rect = text.get_rect(center = (button_width // 2, button_height // 2))
+    button_surface.blit(text, text_rect)
+
+#Saves the current game
+def save():
+    button_width = 200
+    button_height = 100
+    button_surface = pygame.Surface((button_width, button_height))
+    button_surface.fill((65,135,145))
+    text = font.render("Save Game", True, (255,255,255))
+    text_rect = text.get_rect(center = (button_width // 2, button_height // 2))
+    button_surface.blit(text, text_rect)
+
+
 #Starting menu
 def title_screen():
     button_width = 200

@@ -9,6 +9,8 @@ classes:
   
   
 functions:
+  new_game(...)
+  unlimited_run(...)
   build_mode(...)
   select_mode(...)
   draw_map(int map)
