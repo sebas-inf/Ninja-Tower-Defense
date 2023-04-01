@@ -5,6 +5,10 @@ pygame.init()
 display_width, display_height = 896,672 # this is a 4:3 aspect ratio, and both the width and the height are divisible by 16 (the map grid is in 16x16 tiles)
 screen = pygame.display.set_mode((display_width, display_height))
 font = pygame.font.Font("assets/HUD/Font/NormalFont.ttf",48)
+pygame.display.set_caption("NinjaTD") #Window Name
+icon = pygame.image.load("assets/MusicCover.png")
+pygame.display.set_icon(icon) #Favicon
+
 
 
 def play(mapID, difficulty = 1):
