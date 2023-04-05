@@ -1,4 +1,5 @@
 import pygame
+from Friend import FriendT
 pygame.init()
 
 
@@ -11,7 +12,7 @@ pygame.display.set_icon(icon) #Favicon
 
 
 
-def play(mapID, difficulty = 1):
+def play(map_id, difficulty = 1):
     pass
 
 def map_select():
