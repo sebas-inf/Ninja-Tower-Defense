@@ -1,0 +1,3 @@
+The screen width and height should be in a 4:3 aspect ratio, and be divisible by 16
+The screen is a 28 x 21 grid, with default grid size being 32x32 px (textures are 16x16, this is scaled up by a factor of 2)
+The play area is a 16 x 12 grid (aligned to the bottom left corner of the screen)

@@ -1,0 +1,57 @@
+{
+    "grass": {
+        "proj_damage": 1,
+        "proj_firerate": 1000,
+        "proj_range": 48,
+        "proj_speed": 1,
+        "spec_damage": 1,
+        "spec_firerate": 1000,
+        "spec_range": 48,
+        "spec_speed": 1,
+        "cost": 200
+    },
+    "ice": {
+        "proj_damage": 1,
+        "proj_firerate": 1000,
+        "proj_range": 48,
+        "proj_speed": 1,
+        "spec_damage": 1,
+        "spec_firerate": 1000,
+        "spec_range": 48,
+        "spec_speed": 1,
+        "cost": 200
+    },
+    "fire": {
+        "proj_damage": 1,
+        "proj_firerate": 1000,
+        "proj_range": 48,
+        "proj_speed": 1,
+        "spec_damage": 1,
+        "spec_firerate": 1000,
+        "spec_range": 48,
+        "spec_speed": 1,
+        "cost": 200
+    },
+    "rock": {
+        "proj_damage": 1,
+        "proj_firerate": 1000,
+        "proj_range": 48,
+        "proj_speed": 1,
+        "spec_damage": 1,
+        "spec_firerate": 1000,
+        "spec_range": 48,
+        "spec_speed": 1,
+        "cost": 200
+    },
+    "thunder": {
+        "proj_damage": 1,
+        "proj_firerate": 1000,
+        "proj_range": 48,
+        "proj_speed": 1,
+        "spec_damage": 1,
+        "spec_firerate": 1000,
+        "spec_range": 48,
+        "spec_speed": 1,
+        "cost": 200
+    }
+}
