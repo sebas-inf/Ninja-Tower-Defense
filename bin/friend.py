@@ -21,7 +21,7 @@ class Tower:
         self.__spec_damage = int(tower_data["spec_damage"])
         self.__spec_firerate = int(tower_data["spec_firerate"])
         self.__spec_range = int(tower_data["spec_range"])
-        self.__spec_speed = int(tower_data["spec_speed"])
+        self.__spec_speed = float(tower_data["spec_speed"])
         self.__cost = int(tower_data["cost"])
 
     # description:  moves the tower to a specified x and y coordinate
