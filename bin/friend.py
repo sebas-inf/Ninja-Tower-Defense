@@ -2,7 +2,6 @@
 # range is stored in pixel radius
 import pygame
 from math import sqrt
-import assets
 pygame.init()
 
 
