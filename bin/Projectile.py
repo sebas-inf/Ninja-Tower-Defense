@@ -31,5 +31,11 @@ class Projectile:
             projectiles.pop(self)
 
 
-    def __draw__(self):
+    def __draw__(self, surface):
+        pygame.draw.circle(surface, (62, 60, 66), (int(self.x), int(self.y)), self.radius)
+        pygame.draw.circle(surface, (179, 176, 159), (int(self.x), int(self.y)), self.radius - 2)
+
+    def check_hit(self, enemies):
         pass
+
+    
