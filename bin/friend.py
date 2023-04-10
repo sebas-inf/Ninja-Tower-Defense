@@ -25,6 +25,7 @@ class Tower:
         self.__spec_speed = float(tower_data["spec_speed"])
         self.__cost = int(tower_data["cost"])
         self.__image = pygame.image.load("assets/Actor/Animals/Cat/Faceset.png")
+        self.__rect = self.__image.get_rect()
 
     # description:  moves the tower to a specified x and y coordinate
     # parameters:   x and y coordinates of the destination
@@ -35,23 +36,23 @@ class Tower:
 
     # description:  First checks if the current position is a valid placement (EX: not on the track or another tower)
     #               If it is a valid placement, set place_mode to false to 
-    # parameters:   
-    # return:       
-    def __place__(self, x , y, towers):
-        self.__x = x
-        self.__y = y
-        trail_color = pygame.Color(0,0,0)
-    #gets the color of the currents pixels that the user is trying to place the tower at
-        color = pygame.Surface.get_at((x,y))
-    #If the color of the current pixel is the color of the trail the user won't be able to place the tower down
-        if color == trail_color:
-            return False
-    #Checks if there is already a tower where the user wants to place the new tower, if there is then the user won't be able to place a new tower there
+    # parameters:   list of placed towers
+    # return True:  Able to place the tower, adds self to towers list
+    # return False: Unable to place the tower
+    def __place__(self, towers):
+        trail_colors = [pygame.Color(211,134,95), pygame.Color(189,121,89)]
+        #gets the color of the currents pixels that the user is trying to place the tower at
+        color = pygame.Surface.get_at((self.__x, self.__y))
+        #If the color of the current pixel is the color of the trail the user won't be able to place the tower down
+        for trail_color in trail_colors:
+            if color == trail_color:
+                return False
+        #Checks if there is already a tower where the user wants to place the new tower, if there is then the user won't be able to place a new tower there
         else:
-            new_tower = pygame.rect(x,y,16,16)
             for tower in towers:
-                if tower.rect.colliderect(new_tower):
+                if tower.rect.colliderect(self.__rect):
                     return False
+            towers.append(self)
             return True
             
 
