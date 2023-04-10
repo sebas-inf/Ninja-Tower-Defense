@@ -1,6 +1,6 @@
 import pygame
 import json
-from Friend import Tower
+from friend import Tower
 
 pygame.init()
 

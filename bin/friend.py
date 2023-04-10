@@ -24,7 +24,7 @@ class Tower:
         self.__spec_range = int(tower_data["spec_range"])
         self.__spec_speed = float(tower_data["spec_speed"])
         self.__cost = int(tower_data["cost"])
-        self.__image = pygame.image.load(assets/Actor/Animals/Cat/Faceset.png)
+        self.__image = pygame.image.load("assets/Actor/Animals/Cat/Faceset.png")
 
     # description:  moves the tower to a specified x and y coordinate
     # parameters:   x and y coordinates of the destination
