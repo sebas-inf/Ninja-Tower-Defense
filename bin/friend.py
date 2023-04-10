@@ -2,6 +2,7 @@
 # range is stored in pixel radius
 import pygame
 from math import sqrt
+import assets
 pygame.init()
 
 
@@ -23,6 +24,7 @@ class Tower:
         self.__spec_range = int(tower_data["spec_range"])
         self.__spec_speed = float(tower_data["spec_speed"])
         self.__cost = int(tower_data["cost"])
+        self.__image = pygame.image.load(assets/Actor/Animals/Cat/Faceset.png)
 
     # description:  moves the tower to a specified x and y coordinate
     # parameters:   x and y coordinates of the destination
@@ -35,14 +37,36 @@ class Tower:
     #               If it is a valid placement, set place_mode to false to 
     # parameters:   
     # return:       
-    def __place__(self):
-        pass
+    def __place__(self, x , y, towers):
+        self.__x = x
+        self.__y = y
+        trail_color = pygame.Color(0,0,0)
+    #gets the color of the currents pixels that the user is trying to place the tower at
+        color = pygame.Surface.get_at((x,y))
+    #If the color of the current pixel is the color of the trail the user won't be able to place the tower down
+        if color == trail_color:
+            return False
+    #Checks if there is already a tower where the user wants to place the new tower, if there is then the user won't be able to place a new tower there
+        else:
+            new_tower = pygame.rect(x,y,16,16)
+            for tower in towers:
+                if tower.rect.colliderect(new_tower):
+                    return False
+            return True
+            
 
     # description:  renders the tower on screen (note: does not render the tower's projectiles)
     # parameters:   none
     # return:       none
-    def __draw__(self):
-        pass
+    def __draw__(self , surface, place_mode):
+    #Runs while the user is trying to place a tower
+        if place_mode:
+            tower_range = self.__proj_range 
+            radius_circle = pygame.Surface((tower_range*2, tower_range*2), pygame.SRCALPHA)
+            pygame.draw.circle(radius_circle, (179, 176, 159, 200), (self.__x - 16 // 2, self.__y - 16 // 2), tower_range)
+        #Updates the screen with the new tower
+        surface.blit(self.__image, (self.__x - 16 // 2, self.__y - 16 // 2))
+        
 
     # description:  fires a projectile
     # parameters:   target x, target y, current game time
