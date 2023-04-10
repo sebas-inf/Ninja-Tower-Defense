@@ -11,47 +11,47 @@
         "cost": 200
     },
     "ice": {
-        "proj_damage": 1,
-        "proj_firerate": 1000,
+        "proj_damage": 3,
+        "proj_firerate": 700,
         "proj_range": 48,
         "proj_speed": 1,
         "spec_damage": 1,
         "spec_firerate": 1000,
         "spec_range": 48,
         "spec_speed": 1,
-        "cost": 200
+        "cost": 300
     },
     "fire": {
-        "proj_damage": 1,
-        "proj_firerate": 1000,
+        "proj_damage": 2,
+        "proj_firerate": 1200,
         "proj_range": 48,
-        "proj_speed": 1,
+        "proj_speed": 2,
         "spec_damage": 1,
         "spec_firerate": 1000,
         "spec_range": 48,
         "spec_speed": 1,
-        "cost": 200
+        "cost": 350
     },
     "rock": {
-        "proj_damage": 1,
-        "proj_firerate": 1000,
+        "proj_damage": 4,
+        "proj_firerate": 500,
         "proj_range": 48,
         "proj_speed": 1,
         "spec_damage": 1,
         "spec_firerate": 1000,
         "spec_range": 48,
         "spec_speed": 1,
-        "cost": 200
+        "cost": 450
     },
     "thunder": {
-        "proj_damage": 1,
+        "proj_damage": 5,
         "proj_firerate": 1000,
         "proj_range": 48,
-        "proj_speed": 1,
+        "proj_speed": 2,
         "spec_damage": 1,
         "spec_firerate": 1000,
         "spec_range": 48,
         "spec_speed": 1,
-        "cost": 200
+        "cost": 600
     }
 }

@@ -4,14 +4,14 @@ from Friend import Tower
 
 pygame.init()
 
-# loads in settings data from bin\settings.json and stores the information to their respective variables
+# loads in settings data from bin/settings.json and stores the information to their respective variables
 # note: json files store all information as strings. make sure to convert any non-string type variables to their respective type (EX: screen_width = int(settings["screen_width"]))
 with open("bin/settings.json") as file:
     settings = json.load(file)
 screen_width = int(settings["screen_width"])
 screen_height = int(settings["screen_height"])
 
-# reads data about towers from bin\towers.json and loads it into all_tower_data
+# reads data about towers from bin/towers.json and loads it into all_tower_data
 with open("bin/towers.json") as file:
     all_tower_data = json.load(file)
 
