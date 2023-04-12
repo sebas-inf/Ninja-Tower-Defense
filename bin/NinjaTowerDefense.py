@@ -40,12 +40,12 @@ def title_screen():
     play_y = screen_height // 2
     options_x = play_x
     options_y = screen_height // 2 + button_height + button_gap
-    quit_x = screen_width // 2 + (button_gap / 2)
+    quit_x = screen_width // 2 + (button_gap / 2) + (button_width // 3)
     quit_y = options_y
     # create button objects
-    play_button = Button(play_x, play_y, (button_width * 2 + button_gap), button_height, "Play", (255, 255, 255), (0, 0, 0), font_size)
-    options_button = Button(options_x, options_y, button_width, button_height, "Options", (255, 255, 255), (0, 0, 0), font_size)
-    quit_button = Button(quit_x, quit_y, button_width, button_height, "Quit", (255, 255, 255), (0, 0, 0), font_size)
+    play_button = Button(play_x, play_y, (button_width * 2 + button_gap), button_height, "PLAY", (255, 255, 255), (0, 0, 0), font_size)
+    options_button = Button(options_x, options_y, (button_width * 4 // 3), button_height, "OPTIONS", (255, 255, 255), (0, 0, 0), font_size)
+    quit_button = Button(quit_x, quit_y, (button_width * 2 // 3), button_height, "QUIT", (255, 255, 255), (0, 0, 0), font_size)
 
 
     while True:
