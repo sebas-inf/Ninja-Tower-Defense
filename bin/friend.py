@@ -46,7 +46,8 @@ class Tower:
         for trail_color in trail_colors:
             if color == trail_color:
                 return False
-        #Checks if there is already a tower where the user wants to place the new tower, if there is then the user won't be able to place a new tower there
+        # checks if there is already a tower where the user wants to place the new tower, 
+        # if there is then the user won't be able to place a new tower there
         else:
             for tower in towers:
                 if tower.rect.colliderect(self.__rect):

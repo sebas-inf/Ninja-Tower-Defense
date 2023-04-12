@@ -1,7 +1,7 @@
 import pygame
 import json
-from friend import Tower
-
+from Friend import Tower
+from Button import Button
 pygame.init()
 
 # loads in settings data from bin/settings.json and stores the information to their respective variables
@@ -22,33 +22,65 @@ pygame.display.set_caption("NinjaTD") #Window Name
 icon = pygame.image.load("assets/MusicCover.png")
 pygame.display.set_icon(icon) #Favicon
 
-
 #Starting menu
 def title_screen():
-    button_width = 200
-    button_height = 100
-    button_surface = pygame.Surface((button_width, button_height))
-    button_surface.fill((65,135,145))
-    button_rect = button_surface.get_rect(center = (button_width // 2, button_height // 2))
-    text = font.render("START", True, (255,255,255))
-    text_rect = text.get_rect(center = (button_width // 2, button_height // 2))
-    button_surface.blit(text, text_rect)
-    button_rect.x = screen_width // 2 - button_width // 2
-    button_rect.y = screen_height // 2 - button_height // 2
+    title_font = pygame.font.Font("assets/HUD/Font/NormalFont.ttf", int((screen_width / 28) * 2))
+    title_text_surface = title_font.render("Ninja Tower Defense", True, (255, 255, 255))
+    title_text_x = (screen_width - title_text_surface.get_size()[0]) // 2
+    title_text_y = (screen_height - title_text_surface.get_size()[1]) // 2 - (screen_height / 21 * 5)
+
+    # find the button dimensions based on screen size
+    button_width = screen_width / 28 * 8    # screen_width / 28 gives the grid size of the screen
+    button_height = screen_height / 21 * 2  # screen_height / 21 also gives the grid size of the screen
+    button_gap = screen_width / 28 / 4
+    # find font size based on screen size
+    font_size = int(screen_width / 28 * 1.5)
+    # find the x and y positions of the buttons    
+    play_x = screen_width // 2 - button_width - (button_gap / 2)
+    play_y = screen_height // 2
+    options_x = play_x
+    options_y = screen_height // 2 + button_height + button_gap
+    quit_x = screen_width // 2 + (button_gap / 2)
+    quit_y = options_y
+    # create button objects
+    play_button = Button(play_x, play_y, (button_width * 2 + button_gap), button_height, "Play", (255, 255, 255), (0, 0, 0), font_size)
+    options_button = Button(options_x, options_y, button_width, button_height, "Options", (255, 255, 255), (0, 0, 0), font_size)
+    quit_button = Button(quit_x, quit_y, button_width, button_height, "Quit", (255, 255, 255), (0, 0, 0), font_size)
+
 
     while True:
         for event in pygame.event.get():
-            if event == pygame.QUIT:
+            if event.type == pygame.QUIT:
                 pygame.quit()
-            
-            elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1: # check for left mouse button click
-                if button_rect.collidepoint(event.pos):
-                    map_select()
+                quit()
+        
+        # render a black background
+        screen.fill((0, 0, 0))
 
-        screen.fill((255,255,255)) # draw background color for menu
-        screen.blit(button_surface, button_rect) # draw play button
+        # render the title text
+        screen.blit(title_text_surface, (title_text_x, title_text_y))
 
-        pygame.display.flip() #Updates the game screen
+        # render the buttons
+        play_button.draw(screen)
+        options_button.draw(screen)
+        quit_button.draw(screen)
+
+        # get updated mouse position and mouse button presses
+        mouse_pos = pygame.mouse.get_pos()
+        mouse_button = pygame.mouse.get_pressed()
+
+        # check for button clicks
+        if play_button.is_clicked(mouse_pos, mouse_button):
+            map_select()
+        if options_button.is_clicked(mouse_pos, mouse_button):
+            options()
+        if quit_button.is_clicked(mouse_pos, mouse_button):
+            pygame.quit()
+            quit()
+        
+        # update the display
+        pygame.display.update()
+
 
 
 # description:  
@@ -56,7 +88,7 @@ def title_screen():
 # return:       
 def play(map_id, difficulty = 1):
     # 
-    level_data = dict()
+    level_data = {}
     match map_id:
         case 0:
             level_data = all_tower_data["one"]
@@ -66,8 +98,14 @@ def play(map_id, difficulty = 1):
 # parameters:   none
 # return:       none
 def map_select():
-    pass
+    print("map select screen")
+    pygame.quit()
+    quit()
 
+def options():
+    print("options screen")
+    pygame.quit()
+    quit()
 
 #Displays losing message
 def lost():
@@ -111,18 +149,6 @@ def load():
     text = font.render("Load Game", True, (255,255,255))
     text_rect = text.get_rect(center = (button_width // 2, button_height // 2))
     button_surface.blit(text, text_rect)
-
-
-#Ends the game and closes the window
-def quit():
-    button_width = 200
-    button_height = 100
-    button_surface = pygame.Surface((button_width, button_height))
-    button_surface.fill((65,135,145))
-    text = font.render("Quit", True, (255,255,255))
-    text_rect = text.get_rect(center = (button_width // 2, button_height // 2))
-    button_surface.blit(text, text_rect)
-
 
 #Saves the current game
 def save():
