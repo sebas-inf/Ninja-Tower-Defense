@@ -70,7 +70,8 @@ def title_screen():
 
         # check for button clicks
         if play_button.is_clicked(mouse_pos, mouse_button):
-            map_select()
+            # should go to map_select in the future
+            play(0, 1)
         if options_button.is_clicked(mouse_pos, mouse_button):
             options()
         if quit_button.is_clicked(mouse_pos, mouse_button):
@@ -102,7 +103,10 @@ def map_select():
     quit()
 
 def options():
-    print("options screen")
+    title_font = pygame.font.Font("assets/HUD/Font/NormalFont.ttf", int((screen_width / 28) * 2))
+    title_text_surface = title_font.render("Ninja Tower Defense", True, (255, 255, 255))
+    title_text_x = (screen_width - title_text_surface.get_size()[0]) // 2
+    title_text_y = (screen_height - title_text_surface.get_size()[1]) // 2 - (screen_height / 21 * 5)
     pygame.quit()
     quit()
 
