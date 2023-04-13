@@ -8,7 +8,7 @@ class Enemy:
         self.__x = x
         self.__y = y
         self.__vx = vx
-        self.__vy = 
+        self.__vy = vy
         
         self.__image = pygame.image.load("")
 
