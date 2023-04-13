@@ -54,10 +54,13 @@ def title_screen():
     play_button = Button(play_x, play_y, (button_width * 2 + button_gap), button_height, "PLAY", (255, 255, 255), (0, 255, 0), font_size)
     options_button = Button(options_x, options_y, (button_width * 4 // 3), button_height, "OPTIONS", (255, 255, 255), (0, 0, 0), font_size)
     quit_button = Button(quit_x, quit_y, (button_width * 2 // 3), button_height, "QUIT", (255, 255, 255), (255, 0, 0), font_size)
-
+    
+    frames_passed = 0
+    
     while True:
         #ticks to maintain frame rate
-        fps_clock.tick()
+        fps_clock.tick(60)
+        frames_passed += 1
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -98,7 +101,9 @@ def title_screen():
 # parameters:   
 # return:       
 def play(map_id, difficulty = 1):
-    frame_count += 1
+    #sets where enemies spawn
+    spawnX = -1 * grid_size
+    spawnY = 7 * grid_size
     max_cow = 10
     max_cat = 8
     max_chicken = 5

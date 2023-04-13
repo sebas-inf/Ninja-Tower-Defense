@@ -4,12 +4,12 @@
         "enemy_speed": 1,
         "enemy_health": 1
     },
-    "chicken": {
+    "mouse": {
         "enemy_dmg": 2,
         "enemy_speed": 4,
         "enemy_health": 2
     },
-    "cat": {
+    "fish": {
         "enemy_dmg": 4,
         "enemy_speed": 2,
         "enemy_health":4
