@@ -4,6 +4,7 @@ from Friend import Tower
 from Button import Button
 from Enemy import Enemy 
 import random
+import time
 from Node import Node
 pygame.init()
 
@@ -24,6 +25,9 @@ font = pygame.font.Font("assets/HUD/Font/NormalFont.ttf",48)
 pygame.display.set_caption("NinjaTD") #Window Name
 icon = pygame.image.load("assets/MusicCover.png")
 pygame.display.set_icon(icon) #Favicon
+
+#clock to set how many fps should the screen be at and count of how many frames have passed
+fps_clock = pygame.time.Clock()
 
 #Starting menu
 def title_screen():
@@ -51,6 +55,9 @@ def title_screen():
     quit_button = Button(quit_x, quit_y, (button_width * 2 // 3), button_height, "QUIT", (255, 255, 255), (255, 0, 0), font_size)
 
     while True:
+        #ticks to maintain frame rate
+        fps_clock.tick()
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -90,7 +97,7 @@ def title_screen():
 # parameters:   
 # return:       
 def play(map_id, difficulty = 1):
-    # 
+    frame_count += 1
     max_cow = 10
     max_cat = 8
     max_chicken = 5
@@ -98,16 +105,16 @@ def play(map_id, difficulty = 1):
     count_cat = 0
     count_chicken = 0
     enemies = []
-    for i in random.randint(0,2):
-        if i == 0 and count_cow != max_cow:
-            enemies.append(Enemy(1, spawnX, spawnY, 1, 0))
-            count_cow += 1
-        elif i == 1 and count_cat != max_cat:
-            enemies.append(Enemy(1, spawnX, spawnY, 1, 0))
-            count_cat += 1
-        elif i == 2 and count_chicken != max_chicken:
-            enemies.append(Enemy(1, spawnX, spawnY, 1, 0))
-            count_chicken += 1
+    i = random.randint(0,2)
+    if i == 0 and count_cow != max_cow:
+        enemies.append(Enemy(1, spawnX, spawnY, 1, 0))
+        count_cow += 1
+    elif i == 1 and count_cat != max_cat:
+        enemies.append(Enemy(1, spawnX, spawnY, 1, 0))
+        count_cat += 1
+    elif i == 2 and count_chicken != max_chicken:
+        enemies.append(Enemy(1, spawnX, spawnY, 1, 0))
+        count_chicken += 1
 
 
 # description:  Loads the map select screen. Has different picture buttons for the levels. When a button is clicked on, the play function is called. The map_id from the play button is sent into the play function.
