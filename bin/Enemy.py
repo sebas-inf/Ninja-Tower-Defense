@@ -2,15 +2,16 @@ import pygame
 from math import sqrt
 
 class Enemy:
-    def __init__(self, level, x, y, vx, vy, screen_width, screen_height):
+    def __init__(self, level, x, y, vx, vy, grid_size):
         self.__health = level
         self.__speed = level * 2
         self.__x = x
         self.__y = y
         self.__vx = vx
-        self.__vy = 
+        self.__vy = vy
+        self.__size = grid_size
         
-        self.__image = pygame.image.load("")
+        self.__image = pygame.image.load("assets/Actor/Monsters/Mouse/SpriteSheet.png")
 
     
     def __move__(self):
@@ -18,4 +19,4 @@ class Enemy:
         self.__y += self.__vy * self.__speed
     
     def __draw__(self):
-        
+        pass
