@@ -1,4 +1,5 @@
 {
     "screen_width": 896,
-    "screen_height": 672
+    "screen_height": 672,
+    "fps": 60
 }
