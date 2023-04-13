@@ -47,7 +47,6 @@ def title_screen():
     options_button = Button(options_x, options_y, (button_width * 4 // 3), button_height, "OPTIONS", (255, 255, 255), (0, 0, 0), font_size)
     quit_button = Button(quit_x, quit_y, (button_width * 2 // 3), button_height, "QUIT", (255, 255, 255), (0, 0, 0), font_size)
 
-
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
