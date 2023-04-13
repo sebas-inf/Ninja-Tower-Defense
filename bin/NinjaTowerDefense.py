@@ -1,8 +1,8 @@
 import pygame
 import json
-from friend import Tower
-from Enemy import Enemy
+from Friend import Tower
 from Button import Button
+from Enemy import Enemy 
 import random
 from Node import Node
 pygame.init()
@@ -91,26 +91,23 @@ def title_screen():
 # return:       
 def play(map_id, difficulty = 1):
     # 
+    max_cow = 10
+    max_cat = 8
+    max_chicken = 5
     count_cow = 0
     count_cat = 0
     count_chicken = 0
     enemies = []
-
     for i in random.randint(0,2):
-        if i == 0:
+        if i == 0 and count_cow != max_cow:
             enemies.append(Enemy(1, spawnX, spawnY, 1, 0))
             count_cow += 1
-        elif i == 1:
-            enemies.append(Enemy(2, spawnX, spawnY, 1, 0))
-            count_ca
-        else:
-            enemies.append(Enemy(3, spawnX, spawnY, 1, 0))
-
-
-            
-
-    
-
+        elif i == 1 and count_cat != max_cat:
+            enemies.append(Enemy(1, spawnX, spawnY, 1, 0))
+            count_cat += 1
+        elif i == 2 and count_chicken != max_chicken:
+            enemies.append(Enemy(1, spawnX, spawnY, 1, 0))
+            count_chicken += 1
 
 
 # description:  Loads the map select screen. Has different picture buttons for the levels. When a button is clicked on, the play function is called. The map_id from the play button is sent into the play function.
