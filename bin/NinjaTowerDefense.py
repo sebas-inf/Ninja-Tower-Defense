@@ -1,6 +1,7 @@
 import pygame
 import json
 from friend import Tower
+from Enemy import Enemy
 from Button import Button
 import random
 from Node import Node
@@ -88,14 +89,22 @@ def title_screen():
 # description:  
 # parameters:   
 # return:       
-def play(map_id, difficulty = 1, user_health, rounds_left):
+def play(map_id, difficulty = 1):
     # 
     count_cow = 0
     count_cat = 0
     count_chicken = 0
     enemies = []
-    while user_health or rounds_left:
-        for i in random.randint(0,2):
+
+    for i in random.randint(0,2):
+        if i == 0:
+            enemies.append(Enemy(1, spawnX, spawnY, 1, 0))
+            count_cow += 1
+        elif i == 1:
+            enemies.append(Enemy(2, spawnX, spawnY, 1, 0))
+            count_ca
+        else:
+            enemies.append(Enemy(3, spawnX, spawnY, 1, 0))
 
 
             
