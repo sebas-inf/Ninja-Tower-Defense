@@ -109,13 +109,6 @@ def play(map_id, difficulty = 1):
             enemies.append(Enemy(1, spawnX, spawnY, 1, 0))
             count_chicken += 1
 
-
-            
-
-    
-
-
-
 # description:  Loads the map select screen. Has different picture buttons for the levels. When a button is clicked on, the play function is called. The map_id from the play button is sent into the play function.
 # parameters:   none
 # return:       none
