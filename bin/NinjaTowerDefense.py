@@ -98,7 +98,7 @@ def play(map_id, difficulty = 1):
 # return:       none
 def map_select():
     title_font = pygame.font.Font("assets/HUD/Font/NormalFont.ttf", int((screen_width / 28) * 2))
-    title_text_surface = title_font.render("Map Select Screen", True, (255, 255, 255))
+    title_text_surface = title_font.render("Map Select Screen", True, (150, 83, 64))
     title_text_x = (screen_width - title_text_surface.get_size()[0]) // 2
     title_text_y = (screen_height - title_text_surface.get_size()[1]) // 2 - (screen_height / 21 * 5)
 
