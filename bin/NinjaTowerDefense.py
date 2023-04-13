@@ -1,6 +1,6 @@
 import pygame
 import json
-from Friend import Tower
+from friend import Tower
 from Button import Button
 pygame.init()
 
@@ -43,9 +43,9 @@ def title_screen():
     quit_x = screen_width // 2 + (button_gap / 2) + (button_width // 3)
     quit_y = options_y
     # create button objects
-    play_button = Button(play_x, play_y, (button_width * 2 + button_gap), button_height, "PLAY", (255, 255, 255), (0, 0, 0), font_size)
+    play_button = Button(play_x, play_y, (button_width * 2 + button_gap), button_height, "PLAY", (255, 255, 255), (0, 255, 0), font_size)
     options_button = Button(options_x, options_y, (button_width * 4 // 3), button_height, "OPTIONS", (255, 255, 255), (0, 0, 0), font_size)
-    quit_button = Button(quit_x, quit_y, (button_width * 2 // 3), button_height, "QUIT", (255, 255, 255), (0, 0, 0), font_size)
+    quit_button = Button(quit_x, quit_y, (button_width * 2 // 3), button_height, "QUIT", (255, 255, 255), (255, 0, 0), font_size)
 
     while True:
         for event in pygame.event.get():
@@ -98,9 +98,10 @@ def play(map_id, difficulty = 1):
 # parameters:   none
 # return:       none
 def map_select():
-    print("map select screen")
-    pygame.quit()
-    quit()
+    title_font = pygame.font.Font("assets/HUD/Font/NormalFont.ttf", int((screen_width / 28) * 2))
+    title_text_surface = title_font.render("Map Select Screen", True, (150, 83, 64))
+    title_text_x = (screen_width - title_text_surface.get_size()[0]) // 2
+    title_text_y = (screen_height - title_text_surface.get_size()[1]) // 2 - (screen_height / 21 * 5)
 
 def options():
     title_font = pygame.font.Font("assets/HUD/Font/NormalFont.ttf", int((screen_width / 28) * 2))
