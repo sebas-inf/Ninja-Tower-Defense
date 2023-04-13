@@ -1,15 +1,18 @@
 {
-    "cow": {
+    "bamboo": {
+        "image_path":"assets/Actor/Monsters/Bamboo/SpriteSheet.png",
         "enemy_dmg": 1,
         "enemy_speed": 1,
         "enemy_health": 1
     },
     "mouse": {
+        "image_path":"assets/Actor/Monsters/Mouse/SpriteSheet.png",
         "enemy_dmg": 2,
         "enemy_speed": 4,
         "enemy_health": 2
     },
     "fish": {
+        "image_path":"assets/Actor/Monsters/Fish/SpriteSheet.png",
         "enemy_dmg": 4,
         "enemy_speed": 2,
         "enemy_health":4
