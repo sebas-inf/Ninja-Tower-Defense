@@ -2,6 +2,8 @@ import pygame
 import json
 from friend import Tower
 from Button import Button
+import random
+from Node import Node
 pygame.init()
 
 # loads in settings data from bin/settings.json and stores the information to their respective variables
@@ -86,12 +88,20 @@ def title_screen():
 # description:  
 # parameters:   
 # return:       
-def play(map_id, difficulty = 1):
+def play(map_id, difficulty = 1, user_health, rounds_left):
     # 
-    level_data = {}
-    match map_id:
-        case 0:
-            level_data = all_tower_data["one"]
+    count_cow = 0
+    count_cat = 0
+    count_chicken = 0
+    enemies = []
+    while user_health or rounds_left:
+        for i in random.randint(0,2):
+
+
+            
+
+    
+
 
 
 # description:  Loads the map select screen. Has different picture buttons for the levels. When a button is clicked on, the play function is called. The map_id from the play button is sent into the play function.
